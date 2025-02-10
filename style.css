@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.top-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+svg {
+    width: 200px;
+    height: 200px;
+}
+
+#heart {
+    fill: none;
+    stroke: red;
+    stroke-width: 5;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw 3s linear forwards, rainbow 3s infinite linear;
+}
+
+/* Text inside the heart */
+.heart-text {
+    fill: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Drawing Animation */
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 600;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Rainbow Color Transition */
+@keyframes rainbow {
+    0% { stroke: red; }
+    20% { stroke: orange; }
+    40% { stroke: yellow; }
+    60% { stroke: green; }
+    80% { stroke: blue; }
+    100% { stroke: violet; }
+}
+
+/* Bottom right text */
+.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+}
+
+/* Super tiny but visible text */
+.tiny-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 5px; /* Super tiny but still readable */
+}
